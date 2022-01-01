@@ -24,7 +24,7 @@
 		<Login/>
 	{:else if currTab=="signup"}
 		<Signup/>
-	{:else if currTab=="home" && user.token}
+	{:else if currTab==="home" && curretUser.token}
 		<Home/>
 	{/if}
 	

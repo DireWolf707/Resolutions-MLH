@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'corsheaders',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,12 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
+}
+
+DJOSER = {
+    'SERIALIZERS': {
+        'token': 'accounts.serializers.TokenSerializer',
+    }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True

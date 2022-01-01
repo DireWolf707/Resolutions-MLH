@@ -19,7 +19,8 @@
         )}).then(res => res.json()).then((data) => {
             if (data.auth_token) {
                 user.set({
-                    token : data.auth_token
+                    token : data.auth_token,
+                    userID : data.user,
                 });
                 tab.set("home");
             } else {
@@ -30,7 +31,7 @@
 </script>
 
 <form class="w-1/3 mx-auto body-font bg-gray-100 p-8 rounded-xl" on:submit|preventDefault="{login}">
-    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login In</h2>
+    <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login</h2>
     <div class="relative mb-4">
         <label for="username" class="leading-7 text-sm text-gray-600">Username</label>
         <input type="text" id="username" name="username" bind:value="{username}"

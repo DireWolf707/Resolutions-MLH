@@ -3,7 +3,8 @@ import { writable } from "svelte/store";
 
 const user = writable(
     {
-        token : ""
+        token : "",
+        userID: -1
     }
 )
 
