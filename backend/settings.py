@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'djoser',
     'corsheaders',
     'accounts',
+    'django_celery_beat',
+    'schedule',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +142,13 @@ REST_FRAMEWORK = {
 DJOSER = {
     'SERIALIZERS': {
         'token': 'accounts.serializers.TokenSerializer',
+        'user_create': 'accounts.serializers.UserCreateSerializer',
     }
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+CELERY_TIMEZONE = "Asia/Kolkata"
+CELERY_BROKER_URL = 'redis://broker:6379/0'
+
+AUTH_USER_MODEL = 'accounts.User'

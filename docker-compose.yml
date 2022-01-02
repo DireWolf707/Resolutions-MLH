@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - broker
+    container_name: web
+  broker:
+    image: redis
